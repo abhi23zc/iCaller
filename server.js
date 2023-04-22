@@ -2,11 +2,13 @@ const { response } = require('express');
 const express = require('express')
 const truecallerjs = require('truecallerjs')
 const bodyParser = require('body-parser');
-const port = process.env.PORT
+const port = process.env.PORT || 80
 const app = express();
+const path = require('path')
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
 
 var mynumber = ""
 
