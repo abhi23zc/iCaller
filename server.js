@@ -2,7 +2,7 @@ const { response } = require('express');
 const express = require('express')
 const truecallerjs = require('truecallerjs')
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 80
+const port = process.env.PORT
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -112,5 +112,5 @@ app.post('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log("app listening")
+    console.log("app listening"+port)
 })
